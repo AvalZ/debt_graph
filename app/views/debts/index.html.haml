@@ -1,0 +1,27 @@
+
+.container
+  .row
+
+    %h1 Debts
+
+    .col-xs-2
+      %strong Amount
+    .col-xs-2
+      %strong From
+    .col-xs-2
+      %strong To
+
+  - @debts.each do |debt|
+    .row
+      .col-xs-2= number_to_currency debt.amount, unit: "€", format: "%n %u"
+      .col-xs-2= debt.from.name.first + debt.from.surname.first
+      .col-xs-2= debt.to.name.first + debt.to.surname.first
+      .col-xs-6.btn-group
+        = link_to 'Show', debt, class: "btn btn-default"
+        = link_to 'Edit', edit_debt_path(debt), class: "btn btn-warning"
+        = link_to 'Destroy', debt, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-danger"
+      .clearfix
+
+  %br
+
+  = link_to 'New Debt', new_debt_path, class: "btn btn-success pull-right"

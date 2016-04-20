@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160420154710) do
+ActiveRecord::Schema.define(version: 20160420201445) do
+
+  create_table "debts", force: :cascade do |t|
+    t.decimal  "amount",               precision: 8, scale: 2
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+    t.integer  "from_id",    limit: 4
+    t.integer  "to_id",      limit: 4
+  end
 
   create_table "groups", force: :cascade do |t|
     t.string   "name",       limit: 255
