@@ -17,10 +17,10 @@ end
 gem 'bootstrap-sass'
 gem 'haml-rails'
 gem 'high_voltage'
-gem 'mysql2', '~> 0.3.18'
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
 group :development do
+  gem 'mysql2', '~> 0.3.18'
   gem 'better_errors'
   gem 'guard-bundler'
   gem 'guard-rails'
@@ -40,6 +40,7 @@ group :development, :test do
   gem 'rspec-rails'
 end
 group :production do
+  gem 'pg'
   gem 'puma'
   gem 'rails_12factor'
 end
