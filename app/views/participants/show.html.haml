@@ -9,6 +9,12 @@
 %p
   %b Group:
   = @participant.group.name
+%p
+  %b Credits:
+  = @participant.credits
+%p
+  %b Debts:
+  = @participant.debts
 
 = link_to 'Edit', edit_participant_path(@participant)
 \|
