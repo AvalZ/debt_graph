@@ -1,25 +1,21 @@
-%h1 Listing participants
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Surname
-      %th Group
-      %th
-      %th
-      %th
+.container
+  .row
 
-  %tbody
-    - @participants.each do |participant|
-      %tr
-        %td= participant.name
-        %td= participant.surname
+    %h1 Participants
+
+    .col-md-6
+      %br
+      - @participants.each do |participant|
+        %strong= participant.name
+        %strong= participant.surname
+        \-- from
         %td= participant.group.name
-        %td= link_to 'Show', participant
-        %td= link_to 'Edit', edit_participant_path(participant)
-        %td= link_to 'Destroy', participant, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        .btn-group.pull-right
+          = link_to 'Show', participant, class: "btn btn-default"
+          = link_to 'Edit', edit_participant_path(participant), class: "btn btn-warning"
+          = link_to 'Destroy', participant, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: "btn btn-danger"
+        .clearfix
 
-%br
-
-= link_to 'New Participant', new_participant_path
+  .row
+    = link_to 'New Participant', new_participant_path, class: "btn btn-success pull-right"
