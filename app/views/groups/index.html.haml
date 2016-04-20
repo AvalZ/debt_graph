@@ -1,0 +1,18 @@
+.container
+  .row
+
+    %h1 Groups
+
+    .col-md-6 
+      %br
+      - @groups.each do |group|
+        %strong
+          = group.name
+        .btn-group.pull-right
+          = link_to 'Show', group, class: "btn btn-default"
+          = link_to 'Edit', edit_group_path(group), class: "btn btn-warning"
+          = link_to 'Destroy', group, class: "btn btn-danger", :method => :delete, :data => { :confirm => 'Are you sure?' }
+        .clearfix
+
+  .row
+    = link_to 'New Group', new_group_path, class: "btn btn-success pull-right"

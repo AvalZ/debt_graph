@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @participant.name
+%p
+  %b Surname:
+  = @participant.surname
+%p
+  %b Group:
+  = @participant.group
+
+= link_to 'Edit', edit_participant_path(@participant)
+\|
+= link_to 'Back', participants_path

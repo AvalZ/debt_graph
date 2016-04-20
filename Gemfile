@@ -25,6 +25,7 @@ group :development do
   gem 'guard-bundler'
   gem 'guard-rails'
   gem 'guard-rspec'
+  gem 'guard-livereload'
   gem 'html2haml'
   gem 'hub', :require=>nil
   gem 'quiet_assets'
